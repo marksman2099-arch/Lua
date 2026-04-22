@@ -38,7 +38,7 @@ function handleNo() {
         hint.innerText = "😡هاي صدك تحجين ؟؟؟ ";
         noBtn.innerText = "اي 😡";
     } else if (noClicks === 3) {
-        hint.innerText = "😭دتسكرين كلبييي...";
+        hint.innerText = "😭دتكسرين كلبييي...";
         noBtn.innerText = "😭طبة مرض كلبك ";
     } else if (noClicks >= 4) {
         // The 4th click triggers the galaxy

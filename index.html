@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="envelope-wrapper" id="envelope-wrap" onclick="openLetter()">
+    <div class="envelope">
+        <div class="letter">
+            <p><strong>الى بنتي الحبيبة,</strong></p>
+            <p>دنيتي و روحي و ملاكي الشطور السباعي الجميل</p>
+            <button onclick="startQuiz(event)" style="font-size: 12px; padding: 5px 10px;">دوسي هنا </button>
+        </div>
+    </div>
+</div>
+
+<div id="quiz-section">
+    <h2 id="question-text">تعرفين شكد احبج ؟ </h2>
+    <p id="hint-text" style="color: #ff85a1; min-height: 30px; font-size: 20px; font-weight: bold;"></p>
+    <div class="btn-container">
+        <button id="yes-btn" onmouseover="moveYes(event)" ontouchstart="moveYes(event)">اي</button>
+        <button id="no-btn" onclick="handleNo()">لا</button>
+    </div>
+</div>
+
+<div id="galaxy-section">
+    <video autoplay muted loop playsinline>
+        <source <source <source src="https://assets.mixkit.co/videos/preview/mixkit-flying-through-the-stars-in-space-11818-large.mp4" type="video/mp4">
+    </video>
+    <div class="galaxy-text">
+        <p>صحححححح... انتي متعرفين شكد احبجججج</p>
+        <h1>أني هلكد احبجججججججججججج</h1>
+    </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>

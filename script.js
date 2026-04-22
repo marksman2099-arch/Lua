@@ -5,21 +5,16 @@ function openLetter() {
 }
 
 function startQuiz(e) {
-    e.stopPropagation(); // Stops the envelope from closing again
+    e.stopPropagation();
     document.getElementById('envelope-wrap').style.display = 'none';
     document.getElementById('quiz-section').style.display = 'block';
 }
 
 function moveYes(e) {
-    // Stops the touch from registering as a click on mobile screens
     if(e) e.preventDefault(); 
-    
     const yesBtn = document.getElementById('yes-btn');
-    
-    // Calculate random position
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 80);
     yesBtn.style.position = 'fixed';
     yesBtn.style.left = x + 'px';
     yesBtn.style.top = y + 'px';
@@ -30,18 +25,16 @@ function handleNo() {
     const hint = document.getElementById('hint-text');
     const noBtn = document.getElementById('no-btn');
     
-    // Check how many times she clicked "No"
     if (noClicks === 1) {
-        hint.innerText = "لحظة!!! متعرفين ؟😢 ";
+        hint.innerText = "لحظة!!! متعرفين ؟😢";
         noBtn.innerText = "لا 😢";
     } else if (noClicks === 2) {
-        hint.innerText = "😡هاي صدك تحجين ؟؟؟ ";
+        hint.innerText = "😡هاي صدك تحجين ؟؟؟";
         noBtn.innerText = "اي 😡";
     } else if (noClicks === 3) {
         hint.innerText = "😭دتكسرين كلبييي...";
-        noBtn.innerText = "😭طبة مرض كلبك ";
+        noBtn.innerText = "😭طبة مرض كلبك";
     } else if (noClicks >= 4) {
-        // The 4th click triggers the galaxy
         showGalaxy();
     }
 }

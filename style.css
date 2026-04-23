@@ -18,14 +18,15 @@ body {
   transition: background 1s ease;
 }
 
-/* Sized for iPhone 15 Plus */
+/* 1. Sized perfectly for your Xiaomi 14T Pro (340px wide) */
 .envelope-wrapper {
   position: relative;
-  width: 360px; 
-  height: 240px;
+  width: 340px; 
+  height: 230px;
   cursor: pointer;
 }
 
+/* 2. The Envelope Body */
 .envelope {
   position: relative;
   width: 100%;
@@ -35,68 +36,118 @@ body {
   z-index: 1;
 }
 
-/* The Top Flap */
+/* 3. The Top Flap (Math: 170px + 170px = 340px width) */
 .envelope::before {
   content: "";
   position: absolute;
   top: 0;
   z-index: 4; 
-  border-top: 150px solid #f28a80;
-  border-left: 180px solid transparent;
-  border-right: 180px solid transparent;
+  border-top: 145px solid #f28a80;
+  border-left: 170px solid transparent;
+  border-right: 170px solid transparent;
   transform-origin: top;
   transition: all 0.5s ease;
 }
 
-/* The Front Pocket - hides the letter */
+/* 4. The Front Pocket (Math: 170px + 170px = 340px width) */
 .front-pocket {
     position: absolute;
     bottom: 0;
     width: 0;
     height: 0;
-    border-left: 180px solid transparent;
-    border-right: 180px solid transparent;
-    border-bottom: 135px solid var(--pocket-color);
+    border-left: 170px solid transparent;
+    border-right: 170px solid transparent;
+    border-bottom: 130px solid var(--pocket-color);
     z-index: 3;
 }
 
+/* 5. The Letter Inside */
 .letter {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  width: 340px;
-  height: 200px;
+  width: 320px; /* 20px smaller than envelope to fit perfectly inside */
+  height: 190px;
   background: white;
   padding: 20px;
   box-sizing: border-box;
   transition: all 0.5s;
-  z-index: 2; /* Sandwiched between back and pocket */
+  z-index: 2; /* Sandwiched safely between the pocket and the back */
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
+/* 6. Opening Animations */
 .envelope-wrapper.open .envelope::before {
   transform: rotateX(180deg);
   z-index: 0;
 }
 
 .envelope-wrapper.open .letter {
-  transform: translateY(-160px);
+  transform: translateY(-150px);
   z-index: 5;
-  height: 320px;
+  height: 300px;
 }
 
-/* Quiz Section */
-#quiz-section { display: none; text-align: center; z-index: 10; width: 90%; }
-.btn-container { margin-top: 30px; display: flex; justify-content: center; gap: 20px; height: 150px; }
-button { padding: 15px 30px; font-size: 22px; border-radius: 30px; border: none; cursor: pointer; }
-#no-btn { background-color: #ff85a1; color: white; }
-#yes-btn { background-color: #ccc; z-index: 50; }
+/* 7. Quiz Section Layout */
+#quiz-section { 
+    display: none; 
+    text-align: center; 
+    z-index: 10; 
+    width: 90%; 
+}
 
-/* Galaxy Section */
+.btn-container { 
+    margin-top: 30px; 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    height: 150px; 
+}
+
+button { 
+    padding: 15px 30px; 
+    font-size: 22px; 
+    border-radius: 30px; 
+    border: none; 
+    cursor: pointer; 
+}
+
+#no-btn { 
+    background-color: #ff85a1; 
+    color: white; 
+}
+
+#yes-btn { 
+    background-color: #ccc; 
+    z-index: 50; 
+}
+
+/* 8. Galaxy Video Section */
 #galaxy-section {
-  display: none; position: fixed; inset: 0; background: black; color: white;
-  justify-content: center; align-items: center; flex-direction: column; z-index: 100;
+  display: none; 
+  position: fixed; 
+  inset: 0; 
+  background: black; 
+  color: white;
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: column; 
+  z-index: 100;
 }
-video { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
-.galaxy-text { position: relative; z-index: 101; font-size: 24px; text-align: center; padding: 20px; }
+
+video { 
+  position: absolute; 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover; /* Keeps the video perfectly scaled to your screen */
+  opacity: 0.8; 
+}
+
+.galaxy-text { 
+  position: relative; 
+  z-index: 101; 
+  font-size: 24px; 
+  text-align: center; 
+  padding: 20px; 
+}
